@@ -11,7 +11,6 @@ export const checkRoleMiddleware = (
   const payload = req.user;
   const user = users.find((entry) => entry.username === payload?.username);
 
-  // อนุญาตให้ผู้ใช้จัดการได้เฉพาะรายการของ userId ตัวเอง
   if (!user || !payload?.userId || user.userId !== payload.userId) {
     return res.status(403).json({
       success: false,

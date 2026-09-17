@@ -18,7 +18,6 @@ import checkRoleMiddleware from "../middlewares/checkRoleMiddleware.js";
 
 const router = Router();
 
-// ทุก endpoint ของรายการสินค้าต้องผ่านการยืนยันตัวตน
 router.use(authenticateToken);
 
 // GET /api/vXXX/cart/:userId
@@ -126,7 +125,6 @@ const deleteItem = (req: Request, res: Response, itemIdInput: unknown) => {
   }
 };
 
-// รองรับ itemId ใน URL และรูปแบบเดิมที่ส่ง itemId มาใน body
 router.delete("/:userId/:itemId", checkRoleMiddleware, (req: Request, res: Response) =>
   deleteItem(req, res, req.params.itemId),
 );
