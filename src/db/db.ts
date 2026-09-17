@@ -1,7 +1,7 @@
 import {
   type Item,
   type User,
-} from "../libs/types.ts";
+} from "../libs/types.js";
 
 // In-memory "database"
 export let items: Item[] = [

@@ -1,4 +1,3 @@
-import type { error } from "console";
 import { type Request, type Response, type NextFunction } from "express";
 
 // Define a custom interface for the error object if needed
